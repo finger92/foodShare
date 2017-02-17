@@ -1,0 +1,3 @@
+export const GET_BLOGS_SIMPLE = 'GET_BLOGS_SIMPLE'
+export const GET_BLOG_FULL = 'GET_BLOG_FULL'
+export const OPERATION_FAIL = 'OPERATION_FAIL'
