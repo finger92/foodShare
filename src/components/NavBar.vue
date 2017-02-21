@@ -1,7 +1,12 @@
 <template>
-    <el-row class="nav">
-        <el-col :span="12" :class="{active:navChoose.blog}"><div @click="active(navChoose.blog)" class="title-button">blog</div></el-col>
-        <el-col :span="12" :class="{active:navChoose.map}"><div @click="active(navChoose.map)" class="title-button">map</div></el-col>
+    <div class="nav">
+        <el-col :span="12">
+						<div :class="{active:curChoose=='blog'}" class="title-button"  @click="makeActive('blog')">blog</div>
+				</el-col>
+			
+        <el-col :span="12">
+						<div :class="{active:curChoose=='map'}" class="title-button"  @click="makeActive('map')">map</div>
+			</el-col>
     </el-row>
 </template>
 
@@ -9,15 +14,12 @@
 export default {
   data () {
     return {
-      navChoose: {
-        blog: true,
-        map: false
-      }
+      curChoose: 'blog'
     }
   },
   methods: {
-    active: function (item) {
-      item = true
+    makeActive: function (item) {
+      this.curChoose = item
     }
   }
 }
@@ -26,47 +28,28 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 	.el-col{
-		background-color: #eee;
+		height: 40px;
+		line-height: 40px;
+		background: #eee;
+		border-radius: 4px;
 	}
 	
-	.el-col a{
-		padding: 10px 15px;
+	.el-col div{
+		height: 100%;
 		color: #23527c;
+		border-radius: 4px
 	}
 	
-	.el-col.active{
-		background-color: #003058;
+	.el-col .active{
+		background: #003058;	
 	}
 	
-	.el-col.active a{
+	.el-col div.active{
 		color: #fff;
 	}
 	
 	.nav{
 		width:70%;
 		margin:auto;
-	}
-
-	.text-up{
-		height:60px;
-	}
-
-	.content-right{
-		height:100%;
-	}
-
-	.banner { position: relative; overflow: auto; }
-	.banner li { list-style: none; }
-	.banner ul li { float: left; }
-
-	.slide-image{
-		width: 100%;
-		height: 100%;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: auto 100%;
-	}
-	.text-author{
-		padding-top: 40px;
 	}
 </style>

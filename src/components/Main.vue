@@ -1,7 +1,7 @@
 <template>
   <div>
-      <nav-bar></nav-bar>
-      <blog-sim></blog-sim>
+      <nav-bar class="nav-bar"></nav-bar>
+      <blog-sim class="blog-sim"></blog-sim>
   </div>
 </template>
 
@@ -13,3 +13,13 @@ export default {
   components: { NavBar, BlogSim }
 }
 </script>
+
+<style scoped>
+	.blog-sim{
+		padding: 30px 0 30px 0;
+	}
+	
+	.nav-bar{
+		height: 40px;
+	}
+</style>
